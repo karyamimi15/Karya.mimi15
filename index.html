@@ -1,379 +1,651 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Karya Mimi</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Montserrat',sans-serif;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-
-    background:linear-gradient(
-        -45deg,
-        #4c1d95,
-        #7c3aed,
-        #d946ef,
-        #ec4899
-    );
-
-    background-size:400% 400%;
-    animation:gradientBG 15s ease infinite;
-}
-
-@keyframes gradientBG{
-    0%{
-        background-position:0% 50%;
-    }
-    50%{
-        background-position:100% 50%;
-    }
-    100%{
-        background-position:0% 50%;
-    }
-}
-
-/* Bubble Background */
-
-.background{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    z-index:-1;
-}
-
-.background span{
-    position:absolute;
-    display:block;
-    border-radius:50%;
-    background:rgba(255,255,255,.15);
-    bottom:-150px;
-    animation:bubble 18s linear infinite;
-}
-
-@keyframes bubble{
-    0%{
-        transform:translateY(0) rotate(0deg);
-        opacity:1;
-    }
-    100%{
-        transform:translateY(-1200px) rotate(720deg);
-        opacity:0;
-    }
-}
-
-/* Card */
-
-.container{
-    width:100%;
-    max-width:500px;
-
-    background:rgba(255,255,255,.92);
-
-    backdrop-filter:blur(15px);
-
-    border-radius:30px;
-
-    padding:35px;
-
-    text-align:center;
-
-    border:1px solid rgba(255,255,255,.4);
-
-    box-shadow:0 20px 50px rgba(0,0,0,.2);
-
-    animation:fadeUp .8s ease;
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* Logo */
-
-.logo{
-    width:170px;
-    height:170px;
-    object-fit:cover;
-    border-radius:50%;
-
-    border:3px solid #f5c542;
-
-    box-shadow:
-    0 0 25px rgba(245,197,66,.5);
-
-    animation:floatLogo 4s ease-in-out infinite;
-}
-
-@keyframes floatLogo{
-    0%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-8px);
-    }
-    100%{
-        transform:translateY(0);
-    }
-}
-
-h1{
-    margin-top:20px;
-
-    font-size:34px;
-
-    font-weight:800;
-
-    background:linear-gradient(
-        90deg,
-        #6d28d9,
-        #ec4899
-    );
-
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.bio{
-    margin-top:15px;
-    line-height:1.8;
-    color:#666;
-}
-
-/* Social Icons */
-
-.socials{
-    margin-top:20px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-}
-
-.socials a{
-    width:48px;
-    height:48px;
-
-    border-radius:50%;
-
-    background:white;
-
-    color:#7c3aed;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    text-decoration:none;
-
-    font-size:20px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-
-    transition:.3s;
-}
-
-.socials a:hover{
-    transform:translateY(-4px);
-
-    background:#7c3aed;
-
-    color:white;
-}
-
-/* Buttons */
-
-.link{
-    position:relative;
-
-    overflow:hidden;
-
-    display:block;
-
-    margin-top:15px;
-
-    padding:18px;
-
-    border-radius:18px;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    background:linear-gradient(
-        135deg,
-        #7c3aed,
-        #9333ea
-    );
-
-    box-shadow:0 8px 20px rgba(124,58,237,.3);
-
-    transition:.3s;
-}
-
-.link i{
-    margin-right:10px;
-}
-
-.link::before{
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:-100%;
-
-    width:100%;
-    height:100%;
-
-    background:
-    rgba(255,255,255,.25);
-
-    transition:.5s;
-}
-
-.link:hover::before{
-    left:100%;
-}
-
-.link:hover{
-    transform:translateY(-4px);
-
-    box-shadow:
-        0 15px 30px rgba(124,58,237,.4),
-        0 0 20px rgba(168,85,247,.4);
-}
-
-.footer{
-    margin-top:25px;
-    font-size:12px;
-    color:#888;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7136a8">
+
+    <title>Karya Mimi | Belajar, Berkarya, Menginspirasi</title>
+
+    <meta name="description" content="Karya Mimi - Video AI edukasi, handmade crafting, tools AI dan produk digital. Belajar, berkarya, dan menginspirasi bersama Karya Mimi.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --purple: #7136a8;
+            --purple-dark: #49236e;
+            --pink: #e94cae;
+            --text: #30243d;
+            --muted: #81758c;
+        }
+
+        html {
+            min-height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 40px 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            isolation: isolate;
+            overflow-x: hidden;
+
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+
+            background: linear-gradient(
+                135deg,
+                #54217d,
+                #853cba,
+                #db54b6,
+                #f18bc6
+            );
+
+            background-size: 300% 300%;
+            animation: gradientMove 15s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* BACKGROUND DECORATION */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.13);
+            animation: floatBubble 20s linear infinite;
+        }
+
+        .bubble:nth-child(1) {
+            left: 8%;
+            width: 65px;
+            height: 65px;
+        }
+
+        .bubble:nth-child(2) {
+            left: 25%;
+            width: 35px;
+            height: 35px;
+            animation-delay: 4s;
+        }
+
+        .bubble:nth-child(3) {
+            left: 45%;
+            width: 90px;
+            height: 90px;
+            animation-delay: 7s;
+        }
+
+        .bubble:nth-child(4) {
+            left: 68%;
+            width: 50px;
+            height: 50px;
+            animation-delay: 2s;
+        }
+
+        .bubble:nth-child(5) {
+            left: 88%;
+            width: 75px;
+            height: 75px;
+            animation-delay: 5s;
+        }
+
+        @keyframes floatBubble {
+            from {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.7;
+            }
+            to {
+                transform: translateY(-120vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* MAIN CARD */
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 460px;
+            padding: 38px 30px 28px;
+
+            background: rgba(255,255,255,0.96);
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 30px;
+
+            text-align: center;
+
+            box-shadow: 0 25px 70px rgba(38, 10, 62, 0.28);
+
+            animation: fadeUp 0.8s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* LOGO */
+
+        .logo-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 18px;
+            padding: 5px;
+
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f5c542, #e94cae, #7136a8);
+
+            box-shadow: 0 8px 28px rgba(113,54,168,0.2);
+
+            animation: floatLogo 4s ease-in-out infinite;
+        }
+
+        .logo {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-7px); }
+        }
+
+        /* TITLE */
+
+        h1 {
+            font-size: 32px;
+            line-height: 1.3;
+            font-weight: 800;
+            letter-spacing: 1px;
+
+            background: linear-gradient(90deg, #7136a8, #e94cae);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .bio {
+            margin: 20px 0 22px;
+            color: #6f6479;
+            font-size: 13px;
+            line-height: 2;
+        }
+
+        .bio strong {
+            color: var(--purple);
+            font-weight: 600;
+        }
+
+        /* SOCIAL MEDIA */
+
+        .social-title {
+            font-size: 12px;
+            color: #95889e;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+
+        .socials a {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+            background: #f6effb;
+            color: var(--purple);
+
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .socials a svg {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
+        }
+
+        .socials a:hover {
+            background: var(--purple);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(113,54,168,0.25);
+        }
+
+        /* SECTION LABEL */
+
+        .section-label {
+            margin: 0 0 12px;
+            text-align: left;
+            color: #9988a4;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* MAIN BUTTONS */
+
+        .link {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+
+            width: 100%;
+            min-height: 60px;
+            margin-top: 12px;
+            padding: 14px 17px;
+
+            border: 1px solid rgba(113,54,168,0.1);
+            border-radius: 17px;
+
+            background: #fff;
+            color: var(--text);
+
+            text-decoration: none;
+            text-align: left;
+
+            box-shadow: 0 5px 18px rgba(50,20,70,0.06);
+            transition: transform 0.25s ease,
+                        box-shadow 0.25s ease,
+                        background 0.25s ease;
+        }
+
+        .link:hover {
+            transform: translateY(-3px);
+            background: #faf5ff;
+            box-shadow: 0 10px 25px rgba(113,54,168,0.14);
+            border-color: rgba(113,54,168,0.25);
+        }
+
+        .link:focus-visible,
+        .socials a:focus-visible {
+            outline: 3px solid #e94cae;
+            outline-offset: 4px;
+        }
+
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .link-icon {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+            background: #f2e9fb;
+            color: var(--purple);
+            font-size: 17px;
+        }
+
+        .link-text {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .link-description {
+            display: block;
+            margin-top: 2px;
+            color: #9a8da3;
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        .arrow {
+            color: #ad9ab9;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* FEATURED AI BUTTON */
+
+        .featured {
+            background: linear-gradient(120deg, #7136a8, #a34bc3, #e94cae);
+            border: none;
+            color: white;
+            box-shadow: 0 9px 22px rgba(113,54,168,0.25);
+        }
+
+        .featured:hover {
+            background: linear-gradient(120deg, #5e278f, #9135b3, #d93e9d);
+            box-shadow: 0 12px 27px rgba(113,54,168,0.3);
+        }
+
+        .featured .link-icon {
+            background: rgba(255,255,255,0.18);
+            color: white;
+        }
+
+        .featured .link-description {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .featured .arrow {
+            color: white;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            margin-top: 27px;
+            padding-top: 18px;
+            border-top: 1px solid #f0e9f5;
+            color: #a397aa;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        .footer strong {
+            color: var(--purple);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 480px) {
+            body {
+                padding: 22px 13px;
+                align-items: flex-start;
+            }
+
+            .container {
+                margin: auto 0;
+                padding: 30px 21px 23px;
+                border-radius: 25px;
+            }
+
+            .logo-wrapper {
+                width: 130px;
+                height: 130px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .bio {
+                font-size: 12px;
+            }
+
+            .link {
+                min-height: 57px;
+                padding: 12px;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="background">
-    <span style="left:5%;width:60px;height:60px;"></span>
-    <span style="left:15%;width:30px;height:30px;animation-delay:2s;"></span>
-    <span style="left:25%;width:80px;height:80px;animation-delay:5s;"></span>
-    <span style="left:40%;width:45px;height:45px;animation-delay:1s;"></span>
-    <span style="left:55%;width:70px;height:70px;animation-delay:4s;"></span>
-    <span style="left:75%;width:35px;height:35px;animation-delay:2s;"></span>
-    <span style="left:90%;width:50px;height:50px;animation-delay:6s;"></span>
-</div>
-
-<div class="container">
-
-    <img src="logo%20karya%20mimi.jpeg"
-         alt="Logo Karya Mimi"
-         class="logo">
-
-    <h1>KARYA MIMI</h1>
-
-    <div class="bio">
-        🤖 Video AI Edukasi<br>
-        🎨 Handmade Crafting<br>
-        ✨ Belajar • Berkarya • Menginspirasi ✨
+    <!-- BACKGROUND -->
+    <div class="background" aria-hidden="true">
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
+        <span class="bubble"></span>
     </div>
 
-    <div class="socials">
+    <!-- MAIN CONTENT -->
+    <main class="container">
 
-        <a href="https://www.instagram.com/karya_mimi15/" target="_blank">
-            <i class="fab fa-instagram"></i>
+        <!-- LOGO -->
+        <div class="logo-wrapper">
+            <img
+                src="./logo%20karya%20mimi.jpeg"
+                alt="Logo Karya Mimi"
+                class="logo"
+                width="150"
+                height="150"
+            >
+        </div>
+
+        <!-- PROFILE -->
+        <h1>KARYA MIMI</h1>
+
+        <p class="subtitle">Creative • Digital • Inspiration</p>
+
+        <div class="bio">
+            🤖 Video AI Edukasi<br>
+            🎨 Handmade Crafting<br>
+            ✨ <strong>Belajar • Berkarya • Menginspirasi</strong> ✨
+        </div>
+
+        <!-- SOCIAL MEDIA -->
+        <p class="social-title">TEMUKAN KARYA MIMI</p>
+
+        <div class="socials">
+
+            <!-- INSTAGRAM -->
+            <a
+                href="https://www.instagram.com/karya_mimi15/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram Karya Mimi"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+                </svg>
+            </a>
+
+            <!-- TIKTOK -->
+            <a
+                href="https://www.tiktok.com/@karya_mimi15"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok Karya Mimi"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.6 6.5a5.6 5.6 0 0 1-3.5-3.4A5.8 5.8 0 0 1 15.8 2h-3.5v13.5a2.8 2.8 0 1 1-2.8-2.8c.3 0 .7 0 1 .2V9.3a6.4 6.4 0 0 0-1-.1A6.3 6.3 0 1 0 15.8 15V8.1a9 9 0 0 0 5.2 1.7V6.3a5.4 5.4 0 0 1-1.4.2z"/>
+                </svg>
+            </a>
+
+            <!-- YOUTUBE -->
+            <a
+                href="https://www.youtube.com/@KaryaMimi15"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube Karya Mimi"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/>
+                </svg>
+            </a>
+
+        </div>
+
+        <!-- MAIN LINKS -->
+        <p class="section-label">Explore Karya Mimi</p>
+
+        <!-- AI TOOLS -->
+        <a
+            class="link featured"
+            href="https://akses.tuyulkonten.web.id/r/RISTI15FEB"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="link-content">
+                <span class="link-icon">🤖</span>
+                <span class="link-text">
+                    Tools AI Viral
+                    <span class="link-description">Jelajahi berbagai tools AI kreatif</span>
+                </span>
+            </span>
+            <span class="arrow">›</span>
         </a>
 
-        <a href="https://www.tiktok.com/@karya_mimi15" target="_blank">
-            <i class="fab fa-tiktok"></i>
+        <!-- DIGITAL PRODUCTS -->
+        <a
+            class="link"
+            href="https://lynk.id/karya_mimi"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="link-content">
+                <span class="link-icon">🛍️</span>
+                <span class="link-text">
+                    Produk Digital
+                    <span class="link-description">Temukan produk dan karya digital</span>
+                </span>
+            </span>
+            <span class="arrow">›</span>
         </a>
 
-        <a href="https://www.youtube.com/@KaryaMimi15" target="_blank">
-            <i class="fab fa-youtube"></i>
+        <!-- TIKTOK -->
+        <a
+            class="link"
+            href="https://www.tiktok.com/@karya_mimi15"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="link-content">
+                <span class="link-icon">♪</span>
+                <span class="link-text">
+                    TikTok
+                    <span class="link-description">Video kreatif dan inspirasi terbaru</span>
+                </span>
+            </span>
+            <span class="arrow">›</span>
         </a>
 
-    </div>
+        <!-- INSTAGRAM -->
+        <a
+            class="link"
+            href="https://www.instagram.com/karya_mimi15/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="link-content">
+                <span class="link-icon">📸</span>
+                <span class="link-text">
+                    Instagram
+                    <span class="link-description">Ikuti aktivitas Karya Mimi</span>
+                </span>
+            </span>
+            <span class="arrow">›</span>
+        </a>
 
-    <a class="link"
-       href="https://akses.tuyulkonten.web.id/r/RISTI15FEB"
-       target="_blank">
-        <i class="fa-solid fa-robot"></i>
-        Tools AI Viral
-    </a>
+        <!-- YOUTUBE -->
+        <a
+            class="link"
+            href="https://www.youtube.com/@KaryaMimi15"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="link-content">
+                <span class="link-icon">▶</span>
+                <span class="link-text">
+                    YouTube
+                    <span class="link-description">Tonton video edukasi dan karya</span>
+                </span>
+            </span>
+            <span class="arrow">›</span>
+        </a>
 
-    <a class="link"
-       href="https://www.tiktok.com/@karya_mimi15"
-       target="_blank">
-        <i class="fab fa-tiktok"></i>
-        TikTok
-    </a>
+        <!-- TOP UP -->
+        <a
+            class="link"
+            href="https://karyamimi.gamesquad.id"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <span class="link-content">
+                <span class="link-icon">🎮</span>
+                <span class="link-text">
+                    Top Up Game
+                    <span class="link-description">Lihat layanan top up game</span>
+                </span>
+            </span>
+            <span class="arrow">›</span>
+        </a>
 
-    <a class="link"
-       href="https://www.instagram.com/karya_mimi15/"
-       target="_blank">
-        <i class="fab fa-instagram"></i>
-        Instagram
-    </a>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <strong>© KARYA MIMI</strong><br>
+            Belajar • Berkarya • Menginspirasi<br>
+            Made with love ♡
+        </footer>
 
-    <a class="link"
-       href="https://www.youtube.com/@KaryaMimi15"
-       target="_blank">
-        <i class="fab fa-youtube"></i>
-        YouTube
-    </a>
-
-    <a class="link"
-       href="https://lynk.id/karya_mimi"
-       target="_blank">
-        <i class="fa-solid fa-store"></i>
-        Cuan Dari Produk Digital
-    </a>
-
-    <a class="link"
-       href="https://karyamimi.gamesquad.id"
-       target="_blank">
-        <i class="fa-solid fa-gamepad"></i>
-        Top Up Murah Disini!
-    </a>
-
-    <div class="footer">
-        © 2026 Karya Mimi
-    </div>
-
-</div>
+    </main>
 
 </body>
 </html>
