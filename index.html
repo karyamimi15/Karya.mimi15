@@ -8,6 +8,9 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
 
 *{
@@ -48,7 +51,7 @@ body{
     }
 }
 
-/* BACKGROUND ANIMATION */
+/* Bubble Background */
 
 .background{
     position:fixed;
@@ -62,13 +65,14 @@ body{
 
 .background span{
     position:absolute;
-    bottom:-150px;
-    background:rgba(255,255,255,.15);
+    display:block;
     border-radius:50%;
-    animation:float 18s linear infinite;
+    background:rgba(255,255,255,.15);
+    bottom:-150px;
+    animation:bubble 18s linear infinite;
 }
 
-@keyframes float{
+@keyframes bubble{
     0%{
         transform:translateY(0) rotate(0deg);
         opacity:1;
@@ -79,17 +83,15 @@ body{
     }
 }
 
-/* CARD */
+/* Card */
 
 .container{
     width:100%;
     max-width:500px;
 
-    background:rgba(255,255,255,.95);
+    background:rgba(255,255,255,.92);
 
     backdrop-filter:blur(15px);
-
-    border:1px solid rgba(255,255,255,.6);
 
     border-radius:30px;
 
@@ -97,7 +99,281 @@ body{
 
     text-align:center;
 
+    border:1px solid rgba(255,255,255,.4);
+
     box-shadow:0 20px 50px rgba(0,0,0,.2);
+
+    animation:fadeUp .8s ease;
 }
 
-/* 
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Logo */
+
+.logo{
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:50%;
+
+    border:3px solid #f5c542;
+
+    box-shadow:
+    0 0 25px rgba(245,197,66,.5);
+
+    animation:floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-8px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+h1{
+    margin-top:20px;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    background:linear-gradient(
+        90deg,
+        #6d28d9,
+        #ec4899
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.bio{
+    margin-top:15px;
+    line-height:1.8;
+    color:#666;
+}
+
+/* Social Icons */
+
+.socials{
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+}
+
+.socials a{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#7c3aed;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+    transition:.3s;
+}
+
+.socials a:hover{
+    transform:translateY(-4px);
+
+    background:#7c3aed;
+
+    color:white;
+}
+
+/* Buttons */
+
+.link{
+    position:relative;
+
+    overflow:hidden;
+
+    display:block;
+
+    margin-top:15px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        #7c3aed,
+        #9333ea
+    );
+
+    box-shadow:0 8px 20px rgba(124,58,237,.3);
+
+    transition:.3s;
+}
+
+.link i{
+    margin-right:10px;
+}
+
+.link::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    rgba(255,255,255,.25);
+
+    transition:.5s;
+}
+
+.link:hover::before{
+    left:100%;
+}
+
+.link:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 30px rgba(124,58,237,.4),
+        0 0 20px rgba(168,85,247,.4);
+}
+
+.footer{
+    margin-top:25px;
+    font-size:12px;
+    color:#888;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+    <span style="left:5%;width:60px;height:60px;"></span>
+    <span style="left:15%;width:30px;height:30px;animation-delay:2s;"></span>
+    <span style="left:25%;width:80px;height:80px;animation-delay:5s;"></span>
+    <span style="left:40%;width:45px;height:45px;animation-delay:1s;"></span>
+    <span style="left:55%;width:70px;height:70px;animation-delay:4s;"></span>
+    <span style="left:75%;width:35px;height:35px;animation-delay:2s;"></span>
+    <span style="left:90%;width:50px;height:50px;animation-delay:6s;"></span>
+</div>
+
+<div class="container">
+
+    <img src="logo%20karya%20mimi.jpeg"
+         alt="Logo Karya Mimi"
+         class="logo">
+
+    <h1>KARYA MIMI</h1>
+
+    <div class="bio">
+        🤖 Video AI Edukasi<br>
+        🎨 Handmade Crafting<br>
+        ✨ Belajar • Berkarya • Menginspirasi ✨
+    </div>
+
+    <div class="socials">
+
+        <a href="https://www.instagram.com/karya_mimi15/" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@karya_mimi15" target="_blank">
+            <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@KaryaMimi15" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+    </div>
+
+    <a class="link"
+       href="https://akses.tuyulkonten.web.id/r/RISTI15FEB"
+       target="_blank">
+        <i class="fa-solid fa-robot"></i>
+        Tools AI Viral
+    </a>
+
+    <a class="link"
+       href="https://www.tiktok.com/@karya_mimi15"
+       target="_blank">
+        <i class="fab fa-tiktok"></i>
+        TikTok
+    </a>
+
+    <a class="link"
+       href="https://www.instagram.com/karya_mimi15/"
+       target="_blank">
+        <i class="fab fa-instagram"></i>
+        Instagram
+    </a>
+
+    <a class="link"
+       href="https://www.youtube.com/@KaryaMimi15"
+       target="_blank">
+        <i class="fab fa-youtube"></i>
+        YouTube
+    </a>
+
+    <a class="link"
+       href="https://lynk.id/karya_mimi"
+       target="_blank">
+        <i class="fa-solid fa-store"></i>
+        Cuan Dari Produk Digital
+    </a>
+
+    <a class="link"
+       href="https://karyamimi.gamesquad.id"
+       target="_blank">
+        <i class="fa-solid fa-gamepad"></i>
+        Top Up Murah Disini!
+    </a>
+
+    <div class="footer">
+        © 2026 Karya Mimi
+    </div>
+
+</div>
+
+</body>
+</html>
